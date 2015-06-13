@@ -1,13 +1,20 @@
 var React = require('react');
-var AppActions = require('../actions/app-actions');
+var Catalog = require('../components/catalog');
+var Cart = require('../components/cart');
 
 var App = React.createClass({
-  handler: function(){
-    AppActions.addItem('this is an item')
-  },
-
   render: function(){
-    return <h1 onClick={this.handler}>My Flux App</h1>
+    return (
+      <div>
+        <h1>Let&rsquo;s Shop</h1>
+
+        <h2>Catalog</h2>
+        <Catalog />
+
+        <h2>Cart</h2>
+        <Cart />
+      </div>
+    )
   }
 });
 

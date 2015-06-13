@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatchers/app-dispatcher');
 var AppConstants = require('../constants/app-constants');
-var merge = require('react/lib/merge');
+var assign = require('react/lib/Object.assign');
 var EventEmitter = require('events').EventEmitter;
 
 var CHANGE_EVENT = 'change';
@@ -19,8 +19,8 @@ for(var i=1; i<9; i++){
 
 var _cartItems = [];
 
-function _removeitem(index) {
-  _cart_items[index].inCart = false;
+function _removeItem(index) {
+  _cartItems[index].inCart = false;
   _cartItems.splice(index, 1);
 };
 
@@ -38,7 +38,7 @@ function _decreaseItem(index) {
 function _addItem(item){
   if(!item.inCart){
     item['qty'] = 1;
-    item['inCart']=true;
+    item['inCart'] = true;
     _cartItems.push(item);
   } else {
     _cartItems.forEach(function(cartItem, i){
@@ -96,7 +96,7 @@ var AppStore = assign(EventEmitter.prototype, {
     }
     AppStore.emitChange();
     return true;
-  });
+  })
 
 });
 

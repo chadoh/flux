@@ -16,9 +16,9 @@ var AppActions = {
     })
   },
 
-  decreaseItem: function(index){
+  increaseItem: function(index){
     AppDispatcher.handleViewAction({
-      actionType: AppConstants.DECREASE_ITEM,
+      actionType: AppConstants.INCREASE_ITEM,
       index: index
     })
   },

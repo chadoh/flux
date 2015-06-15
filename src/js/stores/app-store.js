@@ -83,16 +83,16 @@ var AppStore = assign(EventEmitter.prototype, {
     var action = payload.action; // this is our action from handleViewAction
     switch(action.actionType) {
       case AppConstants.ADD_ITEM:
-        _addItem(payload.action.item);
+        _addItem(action.item);
       break;
       case AppConstants.REMOVE_ITEM:
-        _removeItem(payload.action.index);
+        _removeItem(action.index);
       break;
       case AppConstants.INCREASE_ITEM:
-        _increaseItem(payload.action.index);
+        _increaseItem(action.index);
       break;
       case AppConstants.DECREASE_ITEM:
-        _decreaseItem(payload.action.index);
+        _decreaseItem(action.index);
       break;
     }
     AppStore.emitChange();
